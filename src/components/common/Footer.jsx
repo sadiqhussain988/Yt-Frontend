@@ -96,7 +96,7 @@ const Footer = () => {
 
           <p className="text-sm text-gray-300 w-full mb-6 leading-relaxed">
             We deliver innovative digital solutions crafted by a passionate team
-            of developers and designers to help your business grow efficiently.
+            of developers and designers to help your business grow efficiently way.
           </p>
 
           {/* Social Links */}
