@@ -67,7 +67,7 @@ const Navbar = () => {
               hover:from-[#01b5e8] hover:to-[#0a00b5]
               transition-all duration-500"
             >
-              Login
+              Get Started
             </NavLink>
           </div>
 
@@ -136,7 +136,7 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#01b5e8] hover:bg-[#0a0270] transition-all duration-300"
             >
-              Login
+              Get Started
             </NavLink>
           </div>
         </div>

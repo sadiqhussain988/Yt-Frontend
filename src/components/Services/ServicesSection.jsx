@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import UrlForm from "./UrlForm";
 import VideoMetaCard from "./VideoMetaCard";
 import ServicesHero from "./ServicesHero";
-import PlatformStats from "./PlatFormStats";
+import PlatformStats from "./PlatformStats";
 import LoadingSpinner from "./LoadingSpinner";
 
 const PLATFORMS = [
