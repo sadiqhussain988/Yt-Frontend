@@ -60,7 +60,7 @@ const Navbar = () => {
           {/* === Login Button (Desktop) === */}
           <div className="hidden md:block">
             <NavLink
-              to="/login"
+              to="/"
               className="text-white px-6 py-2 rounded-full font-semibold 
               border border-[#f3f7f9]/50 shadow-md
               bg-gradient-to-r from-[#0a00b5] to-[#01b5e8]
@@ -132,7 +132,7 @@ const Navbar = () => {
               </NavLink>
             ))}
             <NavLink
-              to="/login"
+              to="/"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#01b5e8] hover:bg-[#0a0270] transition-all duration-300"
             >
