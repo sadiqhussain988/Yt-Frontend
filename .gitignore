@@ -1,4 +1,4 @@
-# Logs
+git remote add origin https://github.com/sadiqhussain988/Yt-Backend.git# Logs
 logs
 *.log
 npm-debug.log*
