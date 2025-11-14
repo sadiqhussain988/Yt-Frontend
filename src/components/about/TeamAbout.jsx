@@ -1,30 +1,28 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
-import haseen from  "../../assets/sa.jpg"
-import usama from  "../../assets/swsw.jpg"
+import haseen from "../../assets/sa.jpg";
+import usama from "../../assets/swsw.jpg";
 import "aos/dist/aos.css";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const TeamAbout = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+    AOS.init({ duration: 1200, once: true, easing: "ease-in-out", offset: 100 });
   }, []);
 
   const team = [
     {
       name: "Muhammad Usama",
       title: "Frontend Developer",
-      image:
-        usama,
+      image: usama,
       description:
         "Passionate about crafting clean, modern, and responsive interfaces using React, Tailwind CSS, and JavaScript. Always focused on delivering seamless user experiences.",
     },
     {
       name: "Haseen Khan",
       title: "Backend Developer",
-      image:
-        haseen,
+      image: haseen,
       description:
         "Specializes in building fast, secure, and scalable server-side applications using Node.js, Express, and MongoDB. Passionate about clean architecture and API optimization.",
     },
@@ -33,10 +31,15 @@ const TeamAbout = () => {
   return (
     <section
       id="team"
-      className="border-t-1 border-gray-800 py-24 px-6 sm:px-10 bg-gradient-to-b from-[#0A043C] via-[#0B0A3A] to-[#12007E] text-white overflow-hidden relative"
+      className="relative py-15 md:py-20 px-4 md:px-6 sm:px-10 bg-gradient-to-b from-[#0A043C] via-[#0B0A3A] to-[#12007E] text-white overflow-x-hidden overflow-y-hidden border-t border-blue-200"
+
     >
+      {/* Floating Glows */}
+      <div className="absolute top-10 right-20 w-40 h-40 bg-amber-400/20 blur-3xl animate-pulse rounded-full"></div>
+      <div className="absolute bottom-10 left-10 w-56 h-56 bg-yellow-400/10 blur-3xl animate-pulse rounded-full"></div>
+
       {/* Section Header */}
-      <div className="text-center mb-14">
+      <div className="text-center mb-16">
         <h2
           className="text-4xl sm:text-5xl font-extrabold mb-4"
           data-aos="zoom-in"
@@ -57,16 +60,14 @@ const TeamAbout = () => {
         {team.map((member, index) => (
           <div
             key={index}
-            className="group relative bg-[#0F0A5B]/40 border border-[#1a1466] rounded-2xl shadow-lg hover:shadow-amber-400/30 transition-all duration-500 overflow-hidden flex flex-col sm:flex-row"
+            className="group relative bg-[#0F0A5B]/50 border border-[#1a1466] rounded-3xl shadow-lg hover:shadow-amber-400/40 transition-all duration-500 overflow-hidden flex flex-col sm:flex-row"
             data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
           >
             {/* Image Section */}
             <div
-              className="relative h-64 sm:h-auto sm:w-80 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+              className="relative h-64 sm:h-auto sm:w-80 bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
               style={{ backgroundImage: `url(${member.image})` }}
               title={member.name}
-              data-aos="zoom-in"
-              data-aos-delay="100"
             >
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
             </div>

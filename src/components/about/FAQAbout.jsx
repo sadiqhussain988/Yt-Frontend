@@ -35,7 +35,7 @@ const FAQAbout = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 1200, once: true, easing: "ease-in-out", offset: 100 });
   }, []);
 
   const toggleFAQ = (index) => {
@@ -45,19 +45,19 @@ const FAQAbout = () => {
   return (
     <section
       id="faq"
-      className="py-24 px-6 md:px-8 bg-gradient-to-b from-[#0A043C] via-[#0B0A3A] to-[#12007E] text-white relative overflow-hidden"
-      data-aos="fade-up"
+      className="relative py-15 md:py-20 px-5 md:px-8 bg-gradient-to-b from-[#0A043C] via-[#0B0A3A] to-[#12007E] text-white overflow-x-hidden"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+      {/* Floating Glows */}
+      <div className="absolute top-10 right-20 w-40 h-40 bg-amber-400/20 blur-3xl animate-pulse rounded-full"></div>
+      <div className="absolute bottom-10 left-10 w-56 h-56 bg-yellow-400/10 blur-3xl animate-pulse rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-start relative z-10">
         {/* Left Content */}
         <div
           className="flex flex-col basis-1/2"
           data-aos="fade-right"
           data-aos-delay="200"
         >
-          <p className="inline-block font-semibold text-amber-400 mb-4 uppercase tracking-wide">
-            Insurance FAQ
-          </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-amber-400 leading-tight">
             Frequently Asked Questions
           </h2>
@@ -70,12 +70,12 @@ const FAQAbout = () => {
 
         {/* Right Content - Accordion */}
         <ul
-          className="basis-1/2 bg-[#0F0A5B]/40 rounded-2xl shadow-lg border border-[#1a1466] divide-y divide-[#1a1466]"
+          className="basis-1/2 bg-[#0F0A5B]/50 rounded-3xl shadow-2xl border border-[#1a1466] divide-y divide-[#1a1466]"
           data-aos="fade-left"
           data-aos-delay="400"
         >
           {faqs.map((faq, index) => (
-            <li key={index} className="transition-all">
+            <li key={index} className="transition-all duration-500">
               <button
                 onClick={() => toggleFAQ(index)}
                 aria-expanded={activeIndex === index}
@@ -83,15 +83,15 @@ const FAQAbout = () => {
               >
                 <span>{faq.question}</span>
                 {activeIndex === index ? (
-                  <HiMinus className="w-5 h-5 text-amber-400" />
+                  <HiMinus className="w-6 h-6 text-amber-400 transition-transform duration-300" />
                 ) : (
-                  <HiPlus className="w-5 h-5 text-gray-400" />
+                  <HiPlus className="w-6 h-6 text-gray-400 transition-transform duration-300" />
                 )}
               </button>
 
               <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  activeIndex === index ? "max-h-40" : "max-h-0"
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                  activeIndex === index ? "max-h-60" : "max-h-0"
                 }`}
               >
                 <div className="pb-5 px-6 text-gray-300 text-base leading-relaxed">

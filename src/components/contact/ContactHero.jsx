@@ -8,9 +8,8 @@ const ContactHero = () => {
   const [vh, setVh] = useState(window.innerHeight);
 
   useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
+    AOS.init({ duration: 1200, once: true, easing: "ease-in-out" });
 
-    // Dynamically handle mobile viewport height (prevents cutoff on iOS/Android)
     const handleResize = () => setVh(window.innerHeight);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -19,7 +18,7 @@ const ContactHero = () => {
   return (
     <section
       style={{ minHeight: vh }}
-      className="relative flex justify-center items-center overflow-hidden bg-[#0A043C] text-white py-12 sm:py-16 px-4"
+      className="relative flex justify-center items-center overflow-x-hidden overflow-y-hidden bg-[#0A043C] text-white py-12 sm:py-16 px-4"
     >
       {/* Background Image */}
       <img
@@ -32,17 +31,12 @@ const ContactHero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#0A043C]/80"></div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center flex flex-col items-center justify-center max-w-3xl w-full">
-        {/* Tagline */}
-        <p
-          data-aos="fade-down"
-          data-aos-delay="200"
-          className="text-xs sm:text-sm bg-[#0c1c26]/80 rounded-full font-light uppercase inline-block px-4 py-2 mb-4 hover:bg-amber-600 transition-colors duration-300 tracking-widest"
-        >
-          Let’s Connect
-        </p>
+      {/* Floating Glows */}
+      <div className="absolute top-16 right-16 w-36 h-36 bg-amber-400/20 blur-3xl animate-pulse rounded-full"></div>
+      <div className="absolute bottom-16 left-16 w-52 h-52 bg-yellow-400/10 blur-3xl animate-pulse rounded-full"></div>
 
+      {/* Main Content */}
+      <div className="relative z-10 text-center flex flex-col items-center justify-center max-w-3xl w-full">
         {/* Heading */}
         <h1
           data-aos="zoom-in"
@@ -56,7 +50,7 @@ const ContactHero = () => {
         <p
           data-aos="fade-up"
           data-aos-delay="600"
-          className="mt-3 sm:mt-4 text-gray-200 max-w-md sm:max-w-lg text-sm sm:text-base leading-relaxed px-4"
+          className="mt-3 sm:mt-4 text-gray-200 max-w-md sm:max-w-lg text-sm sm:text-base leading-relaxed px-4 drop-shadow-sm"
         >
           Whether you have a question, feedback, or a project idea — we’re here
           to help. Reach out anytime, and we’ll respond as soon as possible.
@@ -64,7 +58,7 @@ const ContactHero = () => {
 
         {/* Buttons */}
         <div
-          className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-8 sm:mt-10 w-full justify-center items-center px-2"
+          className="flex flex-row gap-4 sm:gap-8 mt-8 sm:mt-10 w-full justify-center items-center px-2"
           data-aos="flip-up"
           data-aos-delay="800"
         >
