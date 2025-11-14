@@ -9,15 +9,15 @@ export default function ResultsMetrics() {
       value: 40,
       prefix: "",
       suffix: "%",
-      label: "Average Efficiency Gain",
+      label: "Average Efficiency",
       description: "across all projects",
     },
     {
       icon: <FaDollarSign />,
       value: 100,
-      prefix: "$",
+      prefix: "",
       suffix: "M+",
-      label: "Business Value Delivered",
+      label: "Business Delivered",
       description: "globally to clients",
     },
     {
@@ -39,20 +39,20 @@ export default function ResultsMetrics() {
   ];
 
   return (
-    <section className="relative py-8 bg-gradient-to-b from-[#140b5e] via-[#121c37] to-[#0A043C] text-white overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6">
+    <section className="relative py-15 md:py-20 bg-gradient-to-br from-[#120a58] via-[#0B1120] to-[#0A043C] text-white overflow-hidden overflow-x-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
-          <p className="text-amber-400 font-semibold uppercase tracking-widest mb-3">
+          <p className="bg-amber-400/20 text-amber-400 font-semibold tracking-wider px-4 py-2 rounded-full inline-block mb-4 text-sm md:text-base border border-amber-400/30 backdrop-blur-sm shadow-md shadow-amber-400/20">
             Our Impact
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-amber-400 leading-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-amber-400 leading-tight mb-4 drop-shadow-lg">
             Proven Results, Guaranteed Performance
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-300 text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
             At Stream Fetch Plus, we drive measurable outcomes for businesses worldwide through innovative solutions and a performance-based approach.
           </p>
-          <div className="mt-6 w-24 h-1 mx-auto bg-gradient-to-r from-amber-400 to-amber-600 rounded-full"></div>
+          <div className="mt-6 w-28 h-1 mx-auto bg-gradient-to-r from-amber-400 to-amber-600 rounded-full shadow-lg shadow-amber-500/40"></div>
         </div>
 
         {/* Metrics Grid */}
@@ -62,7 +62,7 @@ export default function ResultsMetrics() {
               key={index}
               data-aos="zoom-in"
               data-aos-delay={index * 150}
-              className="relative group bg-[#0A043C]/50 backdrop-blur-xl rounded-2xl shadow-lg border border-amber-400/20 hover:shadow-amber-400/40 hover:border-amber-400/40 transition-all duration-500 p-10 text-center overflow-hidden"
+              className="relative group bg-[#0A043C]/50 backdrop-blur-xl rounded-3xl shadow-lg border border-amber-400/20 hover:shadow-amber-400/50 hover:border-amber-400/50 transition-all duration-500 p-10 text-center overflow-hidden"
             >
               {/* Icon */}
               <div className="relative z-10 flex justify-center mb-6">
